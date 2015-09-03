@@ -9,8 +9,11 @@ module AutoAwesompleteTag
       if searcher.is_a?(Hash)
         controller_params[:default_class_name] = searcher[:class_name] if searcher[:class_name].present?
         controller_params[:default_text_column] = searcher[:text_column] if searcher[:text_column].present?
+        # @fixme don't use
         controller_params[:default_id_column] = searcher[:id_column] if searcher[:id_column].present?
+        # @fixme don't use
         controller_params[:hash_method] = searcher[:hash_method] if searcher[:hash_method].present?
+        controller_params[:label_method] = searcher[:label_method] if searcher[:label_method].present?
       else
         controller_params[:class_name] = searcher
       end
